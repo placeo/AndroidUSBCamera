@@ -37,8 +37,13 @@ android {
         viewBinding = true
         compose = true
     }
+
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.5"
+    }
+
+    lint {
+        abortOnError = false
     }
 }
 

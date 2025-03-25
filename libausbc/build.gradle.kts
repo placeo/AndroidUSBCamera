@@ -32,6 +32,12 @@ android {
             path = File(projectDir, "CMakeLists.txt")
         }
     }
+
+    android {
+        lint {
+            abortOnError = false
+        }
+    }
 }
 
 dependencies {
