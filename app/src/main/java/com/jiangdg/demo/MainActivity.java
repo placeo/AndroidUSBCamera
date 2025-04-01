@@ -19,7 +19,7 @@ import com.jiangdg.demo.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
     private PowerManager.WakeLock mWakeLock;
     private ActivityMainBinding viewBinding;
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,14 +33,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        mWakeLock = Utils.wakeLock(this);
+        mWakeLock = Utils.INSTANCE.wakeLock(this);
     }
 
     @Override
     protected void onStop() {
         super.onStop();
         if (mWakeLock != null) {
-            Utils.wakeUnLock(mWakeLock);
+            Utils.INSTANCE.wakeUnLock(mWakeLock);
         }
     }
 
